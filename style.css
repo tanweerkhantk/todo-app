@@ -1,0 +1,121 @@
+body{
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea,#764ba2,#eb5035);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    background-size: 300% 300%;
+    animation: bgcolor 8s infinite;
+}
+
+@keyframes bgcolor{
+    0%{background-position: 0%, 50%;}
+    50%{background-position: 100%, 50%;}
+    100%{background-position: 0%, 50%;}
+}
+
+.todo-card{
+    width: 520px;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    animation: fadeIn 0.6s ease;
+}
+
+.todo-title{
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.completed{
+    /* text-decoration: line-through; */
+    color: #4cbb3d;
+    /* background: #cacaca; */
+    opacity: 0.8;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.completed::before{
+    content: "✔";
+    color: #4cbb3d;
+    font-weight: bold;
+}
+
+.list-group-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.list-group-item span{
+    cursor: pointer;
+}
+
+.btn{
+    transition: all 0.25s ease;
+}
+
+.btn:hover{
+    transform: scale(1.08);
+}
+
+.form-control{
+    border-radius: 10px;
+}
+
+.btn-success{
+    border-radius: 10px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+.btn-sm{
+    margin-left: 5px;
+}
+
+@media(max-width:500px){
+    .todo-card{
+        width: 90%;
+    }
+}
+
+.fade-task{
+    animation: slideIn 0.4s ease
+}
+
+@keyframes slideIn{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
