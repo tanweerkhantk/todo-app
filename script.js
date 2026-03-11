@@ -70,8 +70,10 @@ function addTodos(){
     let input = document.getElementById("todoInput")
     let text = input.value.trim()
 
-    if(text === '') return
-
+    if(text === '') {
+        alert("Please enter a task")
+        return
+    }
     todos.push({text:text, completed:false})
 
     input.value = ''
